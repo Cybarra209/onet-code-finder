@@ -1,21 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O*NET Code Finder</title>
-    <script defer src="script.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O*NET Code Finder</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    input, textarea { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+    .result { margin-top: 20px; }
+    .result-item { padding: 10px; border-bottom: 1px solid #ccc; }
+    .code { font-weight: bold; }
+    .title { font-size: 1.2em; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold mb-6 text-center">O*NET Code Finder</h1>
-        <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
-            <input type="text" id="jobInput" placeholder="Enter a job title..." class="w-full border p-2 rounded mb-4" />
-            <button onclick="findONETCode()" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">Find O*NET Code</button>
-            <div id="result" class="mt-4 text-lg"></div>
-        </div>
-    </div>
+<body>
+  <h1>O*NET Code Finder</h1>
+  <label for="jobInput">Type a job title:</label>
+  <input type="text" id="jobInput" placeholder="e.g. Software Developer" oninput="searchJobs()"/>
+
+  <label for="descInput">Or describe the job (optional):</label>
+  <textarea id="descInput" placeholder="e.g. helps people with computer issues..." oninput="searchJobs()"></textarea>
+
+  <div class="result" id="results"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,14 +1,31 @@
+let occupations = [];
 
-async function findONETCode() {
-    const input = document.getElementById('jobInput').value.trim().toLowerCase();
-    const resultDiv = document.getElementById('result');
-    const response = await fetch('data/occupations.json');
-    const occupations = await response.json();
+fetch('data/occupations.json')
+  .then(response => response.json())
+  .then(data => {
+    occupations = data;
+  });
 
-    const found = occupations.find(job => job.title.toLowerCase() === input);
-    if (found) {
-        resultDiv.innerHTML = `<strong>Job:</strong> ${found.title}<br><strong>O*NET Code:</strong> ${found.code}`;
-    } else {
-        resultDiv.innerHTML = "No matching occupation found.";
-    }
+function searchJobs() {
+  const input = document.getElementById('jobInput').value.toLowerCase();
+  const descInput = document.getElementById('descInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+
+  const matches = occupations.filter(job => {
+    return job.title.toLowerCase().includes(input) || (descInput && job.description.toLowerCase().includes(descInput));
+  });
+
+  if (matches.length === 0) {
+    resultsDiv.innerHTML = '<p>No matches found.</p>';
+  } else {
+    matches.forEach(job => {
+      resultsDiv.innerHTML += `
+        <div class="result-item">
+          <div class="title">${job.title}</div>
+          <div class="code">O*NET Code: ${job.code}</div>
+          <div class="desc">${job.description}</div>
+        </div>`;
+    });
+  }
 }

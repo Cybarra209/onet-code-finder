@@ -1,22 +1,52 @@
 [
   {
-    "title": "Electrician",
-    "code": "47-2111.00"
-  },
-  {
+    "code": "15-1252.00",
     "title": "Software Developer",
-    "code": "15-1252.00"
+    "description": "Develops and maintains software applications."
   },
   {
+    "code": "29-1141.00",
     "title": "Registered Nurse",
-    "code": "29-1141.00"
+    "description": "Provides patient care and educates patients about health conditions."
   },
   {
-    "title": "Teacher",
-    "code": "25-2021.00"
+    "code": "11-1021.00",
+    "title": "General and Operations Manager",
+    "description": "Oversees operations and coordinates activities of public or private sector organizations."
   },
   {
-    "title": "Mechanical Engineer",
-    "code": "17-2141.00"
+    "code": "13-2011.00",
+    "title": "Accountant",
+    "description": "Prepares and examines financial records."
+  },
+  {
+    "code": "25-2021.00",
+    "title": "Elementary School Teacher",
+    "description": "Teaches academic and social skills to children at the elementary level."
+  },
+  {
+    "code": "47-2061.00",
+    "title": "Construction Laborer",
+    "description": "Performs physical labor at construction sites."
+  },
+  {
+    "code": "43-9061.00",
+    "title": "Office Clerk",
+    "description": "Performs clerical duties such as answering phones and filing."
+  },
+  {
+    "code": "53-3032.00",
+    "title": "Truck Driver",
+    "description": "Transports goods from one location to another."
+  },
+  {
+    "code": "15-1232.00",
+    "title": "Computer User Support Specialist",
+    "description": "Provides help to people and companies with computer equipment and software."
+  },
+  {
+    "code": "41-2031.00",
+    "title": "Retail Salesperson",
+    "description": "Sells merchandise such as furniture, cars, appliances, or clothing."
   }
 ]
