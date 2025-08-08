@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Software Developer",
+    "code": "15-1252.00",
+    "description": "Develop and maintain software applications."
+  },
+  {
+    "title": "Registered Nurse",
+    "code": "29-1141.00",
+    "description": "Provide patient care and educate about health conditions."
+  },
+  {
+    "title": "Electrician",
+    "code": "47-2111.00",
+    "description": "Install and maintain electrical systems in buildings."
+  },
+  {
+    "title": "Accountant",
+    "code": "13-2011.00",
+    "description": "Prepare and examine financial records."
+  },
+  {
+    "title": "Teacher",
+    "code": "25-2021.00",
+    "description": "Educate students in a classroom setting."
+  },
+  {
+    "title": "Web Developer",
+    "code": "15-1254.00",
+    "description": "Design and create websites."
+  },
+  {
+    "title": "Police Officer",
+    "code": "33-3051.00",
+    "description": "Protect life and property through enforcing laws."
+  },
+  {
+    "title": "Chef",
+    "code": "35-1011.00",
+    "description": "Oversee food preparation and manage kitchen staff."
+  },
+  {
+    "title": "Construction Manager",
+    "code": "11-9021.00",
+    "description": "Plan and oversee construction projects."
+  },
+  {
+    "title": "Customer Service Representative",
+    "code": "43-4051.00",
+    "description": "Assist customers with inquiries and resolve complaints."
+  }
+]
