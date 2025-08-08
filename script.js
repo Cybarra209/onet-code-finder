@@ -1,31 +1,38 @@
-let occupations = [];
+let jobs = [];
 
-fetch('data/occupations.json')
-  .then(response => response.json())
-  .then(data => {
-    occupations = data;
-  });
-
-function searchJobs() {
-  const input = document.getElementById('jobInput').value.toLowerCase();
-  const descInput = document.getElementById('descInput').value.toLowerCase();
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = '';
-
-  const matches = occupations.filter(job => {
-    return job.title.toLowerCase().includes(input) || (descInput && job.description.toLowerCase().includes(descInput));
-  });
-
-  if (matches.length === 0) {
-    resultsDiv.innerHTML = '<p>No matches found.</p>';
-  } else {
-    matches.forEach(job => {
-      resultsDiv.innerHTML += `
-        <div class="result-item">
-          <div class="title">${job.title}</div>
-          <div class="code">O*NET Code: ${job.code}</div>
-          <div class="desc">${job.description}</div>
-        </div>`;
-    });
-  }
+async function loadJobs() {
+  const res = await fetch('data/occupations.json');
+  jobs = await res.json();
 }
+
+function matchJobs(input) {
+  const text = input.toLowerCase();
+  return jobs.filter(job =>
+    job.title.toLowerCase().includes(text) ||
+    job.description.toLowerCase().includes(text)
+  );
+}
+
+function showResults(matches) {
+  const results = document.getElementById("results");
+  results.innerHTML = "";
+  matches.forEach(job => {
+    const li = document.createElement("li");
+    li.innerHTML = `<div class="code">${job.code}</div><div>${job.title}</div><div>${job.description}</div>`;
+    results.appendChild(li);
+  });
+}
+
+function search() {
+  const jobInput = document.getElementById("jobInput").value;
+  const descInput = document.getElementById("descInput").value;
+  const combinedInput = jobInput + " " + descInput;
+  const matches = matchJobs(combinedInput);
+  showResults(matches);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadJobs();
+  document.getElementById("jobInput").addEventListener("input", search);
+  document.getElementById("descInput").addEventListener("input", search);
+});

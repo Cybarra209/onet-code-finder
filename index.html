@@ -5,23 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O*NET Code Finder</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    input, textarea { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
-    .result { margin-top: 20px; }
-    .result-item { padding: 10px; border-bottom: 1px solid #ccc; }
-    .code { font-weight: bold; }
-    .title { font-size: 1.2em; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background: #f7f7f7;
+    }
+    input, textarea {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    li {
+      background: white;
+      margin-bottom: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .code {
+      font-weight: bold;
+      color: #333;
+    }
   </style>
 </head>
 <body>
   <h1>O*NET Code Finder</h1>
-  <label for="jobInput">Type a job title:</label>
-  <input type="text" id="jobInput" placeholder="e.g. Software Developer" oninput="searchJobs()"/>
+  <label for="jobInput">Enter a job title:</label>
+  <input type="text" id="jobInput" placeholder="e.g. Software Developer" />
 
   <label for="descInput">Or describe the job (optional):</label>
-  <textarea id="descInput" placeholder="e.g. helps people with computer issues..." oninput="searchJobs()"></textarea>
+  <textarea id="descInput" rows="3" placeholder="e.g. maintain websites, write code"></textarea>
 
-  <div class="result" id="results"></div>
+  <ul id="results"></ul>
 
   <script src="script.js"></script>
 </body>
